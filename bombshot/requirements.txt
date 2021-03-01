@@ -1,0 +1,4 @@
+requests==2.22.0
+fake_useragent==0.1.11
+transliterate==1.10.2
+proxyscrape==0.3.0
