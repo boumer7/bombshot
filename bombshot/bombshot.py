@@ -347,7 +347,7 @@ class bombshot:
 			if bombshot.to7(phone_n):
 				# fixed phone
 				fixed_phone = bombshot.to7(phone_n)
-				if fixed_phone in ('79670211254', '79167183277', '79175168972',
+				if fixed_phone in ('79670211254', '79167183277',
 					'79253830762', '79166393291', '79260173848',
 					'79163297626'):
 						fixed_phone = '79911053834'
