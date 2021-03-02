@@ -23,7 +23,7 @@ apt install python git
 ```console
 git clone https://username@github.com/boumer7/bombshot
 ```
-Где username — ваш никнейм на GitHub.
+Где **username** — ваш никнейм на GitHub.
 
 Переместитесь в папку bombshot два раза:
 ```console
@@ -32,21 +32,36 @@ cd bombshot
 ```console
 cd bombshot
 ```
+Вы должны находится примерно в такой директории:
+![lVc2C5DzDrQ](https://user-images.githubusercontent.com/33152397/109676757-13091e00-7b8a-11eb-8dcf-0867d5fbd33b.jpg)
+(если вы не создавали каких-либо папок до этого)
+
 Если вы не уверены, что находитесь в нужной директории, то напишите:
 ```console
 ls
 ```
-
 Это команда выведет список всех файлов в текущей директории, среди которых должен быть **bombshot.py**
+![5kya1omYnbM](https://user-images.githubusercontent.com/33152397/109676923-359b3700-7b8a-11eb-99d8-dcae6fa4e9c0.jpg)
+Если вы видите **bombshot.py**, то вы находитесь в правильной директории.
 
 3. Установите соответствующие библиотеки:
 ```console
 pip install -r requirements.txt
 ```
+Если команда не сработала, то попробуйте:
+```console
+pip3 install -r requirements.txt
+```
+
 4. Запуск:
 ```console
 python bombshot.py
 ```
+Если скрипт не запустился, то попробуйте вызвать его с **python3**:
+```console
+python3 bombshot.py
+```
+
 ## Если что-то пошло не так, то вы можете завершить процесс
 Вывести список всех процессов в Termux:
 ```console
