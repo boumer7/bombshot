@@ -64,7 +64,7 @@ class bombshot:
 
 	def exiting_program_error(text = None):
 		print(bombshot.error_output('[ОШИБКА]: ' + str(text) + ' Выход из программы...'))
-		os.exit()
+		exit()
 
 	def clear():
 		os.system('cls' if os.name == 'nt' else 'clear')
