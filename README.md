@@ -30,6 +30,7 @@ git clone https://github.com/boumer7/bombshot
 ```
 <br/>
 Переместитесь в папку bombshot два раза:
+
 ```console
 cd bombshot
 ```
