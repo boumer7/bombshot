@@ -51,13 +51,14 @@ python bombshot.py
 ```console
 ps
 ```
-Либо вы можете завершить текущую сессию в Termux вверху экрана, нажав на **Exit**
-![CKSSZu6WLT4](https://user-images.githubusercontent.com/33152397/109675005-71350180-7b88-11eb-9347-0cdfc4010844.jpg)
 
 Завершить процесс, где число — его PID:
 ```console
 kill число
 ```
+Либо вы можете завершить текущую сессию в Termux вверху экрана, нажав на **EXIT**
+![CKSSZu6WLT4](https://user-images.githubusercontent.com/33152397/109675005-71350180-7b88-11eb-9347-0cdfc4010844.jpg)
+
 ## Windows:
 1. Установите [Python 3](https://www.python.org/).
 2. Установите [GitHub](https://git-scm.com/download/win) (Git for Windows Setup).
