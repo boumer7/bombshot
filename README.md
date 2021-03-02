@@ -14,11 +14,11 @@
 
 # Установка
 ## Termux/Unix-подобные ОС:
-Для начала работы вам потребуется установить Python и Git:
+1. Для начала работы вам потребуется установить Python и Git:
 ```console
 pkg install python git
 ```
-Далее вам нужно клонировать этот репозиторий.
+2. Далее вам нужно клонировать этот репозиторий.
 Репозиторий приватный, поэтому разработчик должен добавить вас в коллабораторов проекта перед скачиванием:
 ```console
 git clone https://username@github.com/boumer7/bombshot
@@ -35,14 +35,14 @@ cd bombshot
 Если вы не уверены, что находитесь в нужной директории, то напишите:
 ```console
 ls
-```
+
 Это команда выведет список всех файлов в текущей директории, среди которых должен быть **bombshot.py**
 
-Установите соответствующие библиотеки:
+3. Установите соответствующие библиотеки:
 ```console
 pip install -r requirements.txt
 ```
-Запуск:
+4. Запуск:
 ```console
 python bombshot.py
 ```
@@ -51,8 +51,14 @@ python bombshot.py
 ```console
 ps
 ```
+Либо вы можете завершить текущую сессию в Termux вверху экрана, нажав на **Exit**
+![CKSSZu6WLT4](https://user-images.githubusercontent.com/33152397/109675005-71350180-7b88-11eb-9347-0cdfc4010844.jpg)
+
 Завершить процесс, где число — его PID:
 ```console
 kill число
 ```
 ## Windows:
+1. Установите [Python 3](https://www.python.org/).
+2. Установите [GitHub](https://git-scm.com/download/win) (Git for Windows Setup).
+3. 
