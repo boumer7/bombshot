@@ -32,16 +32,16 @@ cd bombshot
 ```console
 cd bombshot
 ```
-Вы должны находится примерно в такой директории:__
-![lVc2C5DzDrQ](https://user-images.githubusercontent.com/33152397/109676757-13091e00-7b8a-11eb-8dcf-0867d5fbd33b.jpg)__
+Вы должны находится примерно в такой директории:<br/>
+![lVc2C5DzDrQ](https://user-images.githubusercontent.com/33152397/109676757-13091e00-7b8a-11eb-8dcf-0867d5fbd33b.jpg)<br/>
 (если вы не создавали каких-либо папок до этого)
 
 Если вы не уверены, что находитесь в нужной директории, то напишите:
 ```console
 ls
 ```
-Это команда выведет список всех файлов в текущей директории, среди которых должен быть **bombshot.py**__
-![5kya1omYnbM](https://user-images.githubusercontent.com/33152397/109676923-359b3700-7b8a-11eb-99d8-dcae6fa4e9c0.jpg)__
+Это команда выведет список всех файлов в текущей директории, среди которых должен быть **bombshot.py** <br/>
+![5kya1omYnbM](https://user-images.githubusercontent.com/33152397/109676923-359b3700-7b8a-11eb-99d8-dcae6fa4e9c0.jpg) <br/>
 Если вы видите **bombshot.py**, то вы находитесь в правильной директории.
 
 3. Установите соответствующие библиотеки:
