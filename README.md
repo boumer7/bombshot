@@ -142,7 +142,7 @@ dir
 ```console
 pip install -r requirements.txt
 ```
-Если эта команда не сработала, то попробуйте вызвать:
+Если эта команда не сработала, то попробуйте:
 ```console
 pip3 install -r requirements.txt
 ```
