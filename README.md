@@ -27,7 +27,6 @@ apt install python git
 ```console
 git clone https://github.com/boumer7/bombshot
 ```
-<br/>
 Вас попросят авторизоваться через GitHub: вам нужно ввести свой логин, а потом пароль.
 
 Переместитесь в папку bombshot два раза:
