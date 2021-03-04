@@ -133,7 +133,7 @@ git clone https://github.com/boumer7/bombshot
 ```console 
 cd bombshot
 ```
-Теперь переместитесь в подпапку bombshot.
+Теперь переместитесь в подпапку bombshot:
 
 ```console 
 cd bombshot
