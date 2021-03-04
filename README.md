@@ -125,8 +125,8 @@ kill число
 git clone https://github.com/boumer7/bombshot
 ```
 Переместитесь в папку bombshot:
-```
-console cd bombshot
+```console 
+cd bombshot
 ```
 Теперь переместитесь в подпапку bombshot.
 <br/>
