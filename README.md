@@ -83,7 +83,7 @@ kill число
 ![CKSSZu6WLT4](https://user-images.githubusercontent.com/33152397/109675005-71350180-7b88-11eb-9347-0cdfc4010844.jpg)
 
 ## Windows:
-<h3> 1. Для начала работы вам потребуется установить Python и Git: <h3>
+<h3> 1. Для начала работы вам потребуется установить Python и Git: </h3>
 Установите [Python 3](https://www.python.org/).
 <br/>
 Установите [Github](https://git-scm.com/download/win).
