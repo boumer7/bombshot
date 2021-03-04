@@ -88,7 +88,7 @@ kill число
 Установите [Python 3](https://www.python.org/).
 <br/>
 **[ВАЖНО]: При установке Python не забудьте поставить галочку на последний пункт**:
-<br/>
+<br/><br/>
 ![image](https://user-images.githubusercontent.com/33152397/110019165-2d352e80-7d39-11eb-98f5-4cf7614c577d.png)
 
 
