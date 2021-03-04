@@ -83,15 +83,18 @@ kill число
 ![CKSSZu6WLT4](https://user-images.githubusercontent.com/33152397/109675005-71350180-7b88-11eb-9347-0cdfc4010844.jpg)
 
 ## Windows:
+<h3> 1. Для начала работы вам потребуется установить Python и Git: <h3>
 Установите [Python 3](https://www.python.org/).
 <br/>
 Установите [Github](https://git-scm.com/download/win).
 <br/><br/>
+<h3> 2. Подготовка директории</h3>
 Приготовьте любую папку, в которую вы будете клонировать репозиторий:
 <br/><br/>
 ![1](https://user-images.githubusercontent.com/77790965/110011218-3c63ae80-7d30-11eb-8551-9bedbab61ac6.jpg)
 <br/><br/>
-Откройте Windows Powershell либо cmd (для Windows 7 и ниже):
+<h3> 3. Открытие консоли в нужной директории </h3>
+Откройте Windows Powershell либо cmd:
 <br/><br/>
 ![2](https://user-images.githubusercontent.com/77790965/110011802-e2afb400-7d30-11eb-9be6-376eaeb17767.jpg)
 <br/><br/>
@@ -107,6 +110,7 @@ kill число
 <br/><br/>
 ![5](https://user-images.githubusercontent.com/77790965/110012502-a16bd400-7d31-11eb-9dce-207b7ff81979.jpg)
 <br/><br/>
+<h3> 4. Клонирование репозитории </h3>
 Убедившись, что консоль открыта в нужной директории, напишите:
 ```console
 git clone https://github.com/boumer7/bombshot
@@ -123,6 +127,8 @@ dir
 ```
 Среди файлов должен быть **bombshot.py**, если вы его видите, то вы в верной директории.
 <br/><br/>
+  
+<h3> 5. Установка библиотек и запуск </h3>
 Установите все требуемые библиотеки:
 ```console
 pip install -r requirements.txt
