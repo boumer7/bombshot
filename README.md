@@ -88,38 +88,27 @@ kill число
 Установите [Python 3](https://www.python.org/).
 <br/>
 Установите [Github](https://git-scm.com/download/win).
-<br/>
-<br/>
+<br/><br/>
 Приготовьте любую папку, в которую вы будете клонировать репозиторий:
-<br/>
-<br/>
+<br/><br/>
 ![1](https://user-images.githubusercontent.com/77790965/110011218-3c63ae80-7d30-11eb-8551-9bedbab61ac6.jpg)
-<br/>
-<br/>
+<br/><br/>
 Откройте Windows Powershell либо cmd (для Windows 7 и ниже):
-<br/>
-<br/>
+<br/><br/>
 ![2](https://user-images.githubusercontent.com/77790965/110011802-e2afb400-7d30-11eb-9be6-376eaeb17767.jpg)
-<br/>
-<br/>
+<br/><br/>
 При помощи команд cd <название папки>, зайдите в вашу подготовленную директорию:
-<br/>
-<br/>
+<br/><br/>
 ![3](https://user-images.githubusercontent.com/77790965/110012164-4f2ab300-7d31-11eb-8bd9-278ea1fb6932.jpg)
-<br/>
-<br/>
+<br/><br/>
 Если у вас возникают трудности при нахождении папки при помощи консоли, то вы можете навестись на путь и нажать левой кнопкой мыши по нему:
-<br/>
-<br/>
+<br/><br/>
 ![4](https://user-images.githubusercontent.com/77790965/110012361-826d4200-7d31-11eb-8729-6f08a95deeed.jpg)
-<br/>
-<br/>
+<br/><br/>
 Далее вписать в нём **powershell** и нажмите Enter, у вас откроется консоль в текущей директории:
-<br/>
-<br/>
+<br/><br/>
 ![5](https://user-images.githubusercontent.com/77790965/110012502-a16bd400-7d31-11eb-9dce-207b7ff81979.jpg)
-<br/>
-<br/>
+<br/><br/>
 Убедившись, что консоль открыта в нужной директории, напишите:
 ```console
 git clone https://github.com/boumer7/bombshot
@@ -129,15 +118,13 @@ git clone https://github.com/boumer7/bombshot
 cd bombshot
 ```
 Теперь переместитесь в подпапку bombshot.
-<br/>
-<br/>
+<br/><br/>
 Если вы не уверены, что находитесь в правильной директории, то напишите:
 ```console
 dir
 ```
 Среди файлов должен быть **bombshot.py**, если вы его видите, то вы в верной директории.
-<br/>
-<br/>
+<br/><br/>
 Установите все требуемые библиотеки:
 ```console
 pip install -r requirements.txt
@@ -154,7 +141,7 @@ python bombshot.py
 ```console
 python3 bombshot.py
 ```
-<br/>
-<br/>
-Теперь вы можете использовать BOMBSHOT v1.0
+<br/><br/>
+Поздравляем, теперь вы можете использовать BOMBSHOT v1.0.<br/>
+Удачных пентестов!
 
