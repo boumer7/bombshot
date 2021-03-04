@@ -135,7 +135,7 @@ pip3 install -r requirements.txt
 ```console
 python bombshot.py
 ```
-Если это не сработало, то попробуйте запустить скрпит с **python3**:
+Если это не сработало, то попробуйте запустить скрипт с **python3**:
 ```console
 python3 bombshot.py
 ```
