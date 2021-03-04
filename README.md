@@ -139,7 +139,6 @@ python bombshot.py
 ```console
 python3 bombshot.py
 ```
-<br/><br/>
 Поздравляем, теперь вы можете использовать BOMBSHOT v1.0.<br/>
 Удачных пентестов!
 
