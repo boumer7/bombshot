@@ -86,7 +86,9 @@ kill число
 
 ## Windows:
 Установите [Python 3](https://www.python.org/).
+<br/>
 Установите [Github](https://git-scm.com/download/win).
+<br/>
 Приготовьте любую папку, в которую вы будете клонировать репозиторий:
 <br/>
 <br/>
