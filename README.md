@@ -82,7 +82,7 @@ kill число
 Либо вы можете завершить текущую сессию в Termux вверху экрана, нажав на **EXIT**
 ![CKSSZu6WLT4](https://user-images.githubusercontent.com/33152397/109675005-71350180-7b88-11eb-9347-0cdfc4010844.jpg)
 
-# Рекомендации
+## Рекомендации
 
 - Используйте безлимитный интернет. Данное ПО потребляет большое количество интернет-трафика.
 - Используйте прокси для достижения максимального результата.
@@ -186,6 +186,96 @@ python bombshot.py
 ```console
 python3 bombshot.py
 ```
-Поздравляем, теперь вы можете использовать BOMBSHOTbombshot.<br/>
+## IOS
+<h3> 1. Для начала работы вам потребуется установить iSH (>=IOS 11): </h3>
+
+[Ссылка в App Store](https://apps.apple.com/us/app/ish-shell/id1436902243)
+
+<h3> 2. Откройте iSH и напиишите следующие команды: </h3>
+
+```console
+apk
+```
+Проверьте, установлен ли у вас менеджер пакетов **apk**.
+
+Если после ввода этой команды у вас выводит ошибку, то напишите следующую команду для установки **apk**:
+
+```console
+wget -qO- http://dl-cdn.alpinelinux.org/alpine/v3.12/main/x86/apk-tools-static-2.10.5-r1.apk | tar -xz sbin/apk.static && ./sbin/apk.static add apk-tools && rm sbin/apk.static
+```
+
+Обновите и установите список устаревших модулей:
+
+```console
+apk update && apk upgrade 
+```
+
+Установите **Python**:
+
+```console
+
+apk add python
+```
+
+```console
+
+apk add python3
+```
+
+Далее вам нужно клонировать этот репозиторий:
+
+```console
+git clone https://github.com/boumer7/bombshot
+```
+
+Вас попросят авторизоваться через GitHub: вам нужно ввести свой логин, а потом пароль.
+
+Переместитесь в папку bombshot два раза:
+
+```console
+cd bombshot
+```
+
+```console
+cd bombshot
+```
+
+Вы должны находится примерно в такой директории:<br/> <br/>
+![lVc2C5DzDrQ](https://user-images.githubusercontent.com/33152397/109676757-13091e00-7b8a-11eb-8dcf-0867d5fbd33b.jpg)<br/> <br/>
+(если вы не создавали каких-либо папок до этого).
+
+Если вы не уверены, что находитесь в нужной директории, то напишите:
+```console
+ls
+```
+
+Это команда выведет список всех файлов в текущей директории, среди которых должен быть **bombshot.py** <br/> <br/>
+![5kya1omYnbM](https://user-images.githubusercontent.com/33152397/109676923-359b3700-7b8a-11eb-99d8-dcae6fa4e9c0.jpg) <br/> <br/>
+Если вы видите **bombshot.py**, то вы находитесь в правильной директории.
+
+Установите соответствующие библиотеки:
+
+```console
+pip install -r requirements.txt
+```
+
+Если команда не сработала, то попробуйте:
+```console
+pip3 install -r requirements.txt
+```
+
+Запуск:
+
+```console
+python bombshot.py
+```
+
+Если скрипт не запустился, то попробуйте вызвать его с **python3**:
+
+```console
+python3 bombshot.py
+```
+
+Поздравляем, теперь вы можете использовать BOMBSHOT.<br/>
 **Удачных пентестов!**
 
