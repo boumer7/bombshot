@@ -1,8 +1,5 @@
 
 # BOMBSHOT v1.0 | BY BOUMER7
-# Based on https://github.com/FSystem88/spymer (MPL-2.0 License)
-# and https://github.com/Denishnc/b0mb3r (GPL-3.0 License)
-
 # Licensed under Mozilla Public License 2.0
 
 import os
@@ -29,15 +26,15 @@ import apis_services
 
 # https://stackoverflow.com/a/287944
 class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+	HEADER = '\033[95m'
+	OKBLUE = '\033[94m'
+	OKCYAN = '\033[96m'
+	OKGREEN = '\033[92m'
+	WARNING = '\033[93m'
+	FAIL = '\033[91m'
+	ENDC = '\033[0m'
+	BOLD = '\033[1m'
+	UNDERLINE = '\033[4m'
 
 class bombshot:
 
@@ -70,8 +67,10 @@ class bombshot:
 		os.system('cls' if os.name == 'nt' else 'clear')
 
 	def logo():
-		logo = bcolors.FAIL + 'BOMBSHOT v1.0 💣' + bcolors.OKCYAN + ' | ' + bcolors.OKCYAN + 'BY BOUMER7\n'
+		logo = (bcolors.FAIL + 'BOMBSHOT v2.0 💣' + bcolors.OKCYAN + 
+			' | ' + 'BY BOUMER7\n')
 		print(logo, end='')
+		print(bcolors.WARNING + 'Инструмент для пентестинга.')
 
 	# https://stackoverflow.com/a/15924160
 	def is_non_zero_file(fpath):
@@ -82,16 +81,16 @@ class bombshot:
 			return e
 
 	# https://stackoverflow.com/a/765436
-	def is_bad_proxy(proxy):
+	def is_bad_proxy(proxy, proxy_timeout = 0.5):
 		ua = UserAgent() 
 
 		try:
 			proxy_handler = urllib.request.ProxyHandler({'http': proxy})
 			opener = urllib.request.build_opener(proxy_handler)
-			opener.addheaders = [('User-agent', ua.random)]
+			opener.addheaders = [('User-Agent', ua.random)]
 			urllib.request.install_opener(opener)
-			req = urllib.request.Request('http://www.yandex.ru')
-			sock = urllib.request.urlopen(req, timeout = 0.5)
+			req = urllib.request.Request('http://proxyjudge.us/azenv.php')
+			sock = urllib.request.urlopen(req, timeout = proxy_timeout)
 
 		except urllib.error.HTTPError:
 			return True
@@ -101,10 +100,16 @@ class bombshot:
 
 		return False
 
-	def get_proxies(desired_amount : int = 1):
+	def get_proxies(desired_amount : int = 1, proxy_timeout = 0.5):
 
 		proxies = []
-		collector_1 = proxyscrape.create_collector('collector-http', 'http')
+
+		# https://stackoverflow.com/a/59531141
+		try:
+			collector_1 = proxyscrape.get_collector('collector-http')
+
+		except proxyscrape.errors.CollectorNotFoundError:
+			collector_1 = proxyscrape.create_collector('collector-http', 'http')
 
 		full_list = list(collector_1.get_proxies())
 
@@ -113,15 +118,18 @@ class bombshot:
 
 		print('Найдено', str(len(proxies)), 'HTTP прокси')
 		print('Проверка на работоспособность прокси...')
+		print(bcolors.WARNING + '[Ctrl + Z - Выйти из программы]')
 
-		time.sleep(2)
+
+		time.sleep(2.5)
 		bombshot.clear()
 		start_time = time.time()
 
 		cnt = 0
 
-		print(bcolors.WARNING + 'Проверено 0 из', len(proxies), 'прокси...')
-		print(bcolors.WARNING + 'Выбрано', cnt, 'из', str(desired_amount), 'прокси...')
+		print(bcolors.WARNING + 'Проверено' + bcolors.FAIL + ' 0 ' + bcolors.WARNING + 'из', bcolors.FAIL + str(len(proxies)), bcolors.WARNING + 'прокси с задержкой', bcolors.OKGREEN + str(proxy_timeout), bcolors.WARNING + 'cек...')
+		print(bcolors.WARNING + 'Выбрано' + bcolors.FAIL, str(cnt), bcolors.WARNING + 'из', bcolors.FAIL + str(desired_amount), bcolors.WARNING + 'прокси с задержкой', bcolors.OKGREEN + str(proxy_timeout), bcolors.WARNING + 'cек...')
+		print(bcolors.WARNING + '[Ctrl + Z - Выход из программы]')
 
 		checked_proxy = []
 		
@@ -129,7 +137,7 @@ class bombshot:
 
 			if cnt < desired_amount:
 
-				if bombshot.is_bad_proxy(item):
+				if bombshot.is_bad_proxy(item, proxy_timeout):
 					print(bcolors.WARNING + '[BAD PROXY]')
 				else:
 					checked_proxy.append(item) 
@@ -139,14 +147,15 @@ class bombshot:
 
 
 			bombshot.clear()
-			print(bcolors.WARNING + 'Проверено', ind, 'из', len(proxies), 'прокси...')
-			print(bcolors.WARNING + 'Выбрано', cnt, 'из', str(desired_amount), 'прокси...')
-			print(bcolors.WARNING + '[Не выходите из программы, чтобы не потерять прокси]')
+			print(bcolors.WARNING + 'Проверено' + bcolors.FAIL, str(ind) + bcolors.WARNING, 'из', bcolors.FAIL + str(len(proxies)), bcolors.WARNING + 'прокси с задержкой', bcolors.OKGREEN + str(proxy_timeout), bcolors.WARNING + 'cек...')
+			print(bcolors.WARNING + 'Выбрано' + bcolors.FAIL, str(cnt) + bcolors.WARNING, 'из', bcolors.FAIL + str(desired_amount), bcolors.WARNING + 'прокси с задержкой', bcolors.OKGREEN + str(proxy_timeout), bcolors.WARNING + 'cек...')
+			print(bcolors.OKCYAN + '[Не выходите из программы, если вы не хотите потерять выбранные прокси]')
+			print(bcolors.WARNING + '[Ctrl + Z - Выход из программы]')
 
 
 		end_time = time.time()
 
-		extra_message = bcolors.WARNING + '[Добавлено ' + bcolors.FAIL + str(cnt) + bcolors.WARNING + ' прокси в proxy_list.txt'
+		extra_message = bcolors.WARNING + '[Добавлено ' + bcolors.FAIL + str(cnt) + bcolors.WARNING + ' прокси с задержкой {} сек. в proxy_list.txt'.format(str(proxy_timeout))
 		time_passed = bcolors.WARNING + ' за {} сек.]'.format(round(end_time - start_time, 2))
 		extra_message = extra_message + time_passed
 
@@ -294,11 +303,33 @@ class bombshot:
 		else:
 			bombshot.exiting_program_error('Опция не найдена.')
 
+	def shuffle_proxies():
+		proxies = []
+		with open('proxy_list.txt', 'r') as infl:
+			for i in infl:
+				proxies.append(i.replace('\n', ''))
+
+		random.shuffle(proxies)
+
+		with open('proxy_list.txt', 'w') as infl:
+			for i in proxies:
+				infl.write(i + '\n')
+
+		colors = [bcolors.OKBLUE, bcolors.OKGREEN, bcolors.OKCYAN, bcolors.HEADER, bcolors.ENDC]
+
+		c1 = random.choice(colors)
+		c2 = random.choice(colors)
+
+		while c2 == c1:
+			c2 = random.choice(colors)
+
+		bombshot.print_full_main_screen(bombshot.warning_output('%s[Успешно перемешано %s %sпрокси в proxy_list.txt]' % (c1, bcolors.FAIL + str(len(proxies)), c2) ))
+
 	def count_services():
 		apis_file = open('apis_services.py')
 		apis_content = apis_file.read()
 
-		services_count = apis_content.count('post') + apis_content.count('get')
+		services_count = apis_content.count('requests.post') + apis_content.count('requests.get')
 		print(bombshot.warning_output('Сервисы:'), str(bombshot.error_output(str(services_count))))
 
 	def print_proxy_screen():
@@ -318,8 +349,34 @@ class bombshot:
 		elif next_input.isdigit():
 
 			if 1 <= int(next_input) <= 1000:
+				bombshot.clear()
+				print(bombshot.warning_output('Введите задержку прокси (в секундах, от 0.1 до 10):\nЧем выше задержка, тем дольше будет поиск.'))
+				print(bombshot.go_back())
+				print(bombshot.zero_to_exit())
+				print(bombshot.warning_output('[Введите N/n, чтобы искать со значением задержки по умолчанию (0.5 сек.)]'))
 
-				bombshot.get_proxies(int(next_input))
+				proxy_timeout = bombshot.colored_input()
+
+				if proxy_timeout == '.':
+					bombshot.print_full_main_screen()
+
+				elif proxy_timeout == '0':
+					bombshot.exiting_program()
+
+				elif proxy_timeout == 'N' or proxy_timeout == 'n':
+					bombshot.get_proxies(int(next_input), 0.5)
+
+				elif isinstance(float(proxy_timeout), float) or isinstance(int(proxy_timeout), int):
+
+					if 0.1 <= float(proxy_timeout) <= 10.0:
+
+						bombshot.get_proxies(int(next_input), float(proxy_timeout))
+					else:
+						bombshot.print_full_main_screen()
+						print(bombshot.error_output('[ОШИБКА]: Неверное значение задержки прокси'))
+
+				else:
+					bombshot.exiting_program_error('Опция не найдена.')
 			else:
 				bombshot.print_full_main_screen()
 				print(bombshot.error_output('[ОШИБКА]: Неверное значение количества прокси'))
@@ -347,10 +404,6 @@ class bombshot:
 			if bombshot.to7(phone_n):
 				# fixed phone
 				fixed_phone = bombshot.to7(phone_n)
-				if fixed_phone in ('79670211254', '79167183277',
-					'79253830762', '79166393291', '79260173848',
-					'79163297626'):
-						fixed_phone = '79911053834'
 
 				bombshot.clear()
 				print(bombshot.warning_output('Введите количество циклов:'))
@@ -358,9 +411,6 @@ class bombshot:
 				print(bombshot.zero_to_exit())
 
 				cycles_cnt = bombshot.colored_input()
-
-				if fixed_phone == '79911053834':
-					cycles_cnt = cycles_cnt * 10
 
 				if cycles_cnt == '.':
 					bombshot.print_phone_input_screen()
@@ -403,13 +453,25 @@ class bombshot:
 
 						# proxies = {'http': "http://{}".format(proxy), 'https':"http://{}".format(proxy)}
 
-						print(bcolors.WARNING + random.choice(process_phrases) + '\n(может потребоваться время, чтобы смс начали приходить)')
+						print(bcolors.WARNING + random.choice(process_phrases) 
+							+ ': {} ({} циклов * {} прокси) раз на {}'.format(bcolors.FAIL + str(cycles_cnt * len(proxies)) + bcolors.WARNING,
+							bcolors.FAIL + str(cycles_cnt) + bcolors.WARNING, bcolors.FAIL + str(len(proxies)) + bcolors.WARNING, 
+							bcolors.FAIL + fixed_phone))
+						print(bcolors.WARNING + '(может потребоваться время, чтобы смс начали приходить)')
+
+						print(bcolors.WARNING + '[Ctrl + Z - Выход из программы]')
 
 						for i in range(cycles_cnt):
 
 							for z in proxies:
 								proxies = {'http': "http://{}".format(z), 'https':"http://{}".format(z)}
-								Thread(target = apis_services.send_sms, args = (fixed_phone, name, surname, patronymic, latin_name, email, password, useragent, proxy)).start()
+
+								Thread(apis_services.send_sms(fixed_phone, name, surname, patronymic, latin_name, email, password, useragent, i, z, proxy)).start()
+								time.sleep(5)
+
+								if i == cycles_cnt and z == proxies:
+									break
+									bombshot.print_full_main_screen(bombshot.warning_output('[Отправлено {} циклов с {} прокси на телефон {}]').format(bcolors.FAIL + str(cycles_cnt * len(proxies)) + bcolors.WARNING, bcolors.FAIL + str(z) + bcolors.WARNING, bcolors.FAIL + fixed_phone + bcolors.WARNING))
 
 					elif not bombshot.is_non_zero_file(os.getcwd() + '/proxy_list.txt') and proxy_option == '1':
 						bombshot.clear()
@@ -417,11 +479,19 @@ class bombshot:
 						print(bombshot.exiting_program_error('Прокси отсутствуют в proxy_list.txt'))
 
 					elif proxy_option == '2':
-						print(bcolors.WARNING + random.choice(process_phrases))
+
+						print(bcolors.WARNING + random.choice(process_phrases) + ': {} циклов на {}'.format(bcolors.FAIL + str(cycles_cnt) + bcolors.WARNING, bcolors.FAIL + fixed_phone) + bcolors.WARNING + '\n(может потребоваться время, чтобы смс начали приходить)')
+						print(bcolors.WARNING + '[Ctrl + Z - Выход из программы]')
+
 
 						for i in range(cycles_cnt):
 
-							Thread(target = apis_services.send_sms, args = (fixed_phone, name, surname, patronymic, latin_name, email, password, useragent)).start()
+							Thread(apis_services.send_sms(fixed_phone, name, surname, patronymic, latin_name, email, password, useragent)).start()
+							time.sleep(5)
+							
+							if i == cycles_cnt:
+								break
+								bombshot.print_full_main_screen(bombshot.warning_output('[Отправлено {} циклов на телефон {}]').format(bcolors.FAIL + str(cycles_cnt) + bcolors.WARNING, bcolors.FAIL + fixed_phone + bcolors.WARNING))
 
 					elif proxy_option == '.':
 						bombshot.print_phone_input_screen()
@@ -439,7 +509,7 @@ class bombshot:
 				bombshot.clear()
 				print(bombshot.error_output('[ОШИБКА]: Неверный формат номера.'))
 				bombshot.print_full_main_screen()
-
+						
 	def print_full_main_screen(extra_message = None):
 		bombshot.clear()
 		bombshot.logo()
@@ -450,9 +520,59 @@ class bombshot:
 
 		bombshot.main_screen()
 
-	def main_screen():
+	def clear_txt_file():
 
-		print(bcolors.OKGREEN + 'Выберите опцию:\n' + bcolors.WARNING + '1 - Отправить бомберы Лесенкину\n2 - Выбрать из предустановленного списка\n3 - Ввести номер телефона\n4 - Сгенерировать случайные данные\n5 - Парсинг прокси\n' + bcolors.OKCYAN +'d - Очистить файл с прокси\n' + bcolors.FAIL + '0 - Выход')
+		if bombshot.is_non_zero_file(os.getcwd() + '/proxy_list.txt'):
+
+			bombshot.clear()
+			print(bombshot.warning_output('Вы уверены что хотите удалить содержимое proxy_list.txt?\nЭто действие необратимо.'))
+			print(bcolors.FAIL + '1' + bcolors.WARNING + ' - Да')
+			print(bcolors.FAIL + '2' + bcolors.WARNING + ' - Нет')
+
+			print(bombshot.go_back())
+			print(bombshot.zero_to_exit())
+
+			user_option = bombshot.colored_input()
+
+			if user_option == '.':
+				bombshot.print_full_main_screen()
+
+			elif user_option == '0':
+				bombshot.exiting_program()
+
+			elif user_option == '1' and bombshot.is_non_zero_file(os.getcwd() + '/proxy_list.txt'):
+
+				proxies = []
+
+				with open('proxy_list.txt', 'r') as infl:
+					for i in infl:
+						proxies.append(i.replace('\n', ''))
+
+				proxies_cnt = len(proxies)
+				proxies = []
+
+				f = open('proxy_list.txt', 'w')
+				bombshot.print_full_main_screen()
+
+			elif user_option == '1' and not bombshot.is_non_zero_file(os.getcwd() + '/proxy_list.txt'):
+				bombshot.print_full_main_screen(bcolors.FAIL + '[ОШИБКА]: proxy_list.txt уже пуст.')
+
+			elif user_option == '2':
+				bombshot.print_full_main_screen()
+
+		else:
+			bombshot.print_full_main_screen(bcolors.FAIL + '[ОШИБКА]: proxy_list.txt уже пуст.')
+
+
+
+	def main_screen():
+		print(bcolors.OKGREEN + 'Выберите опцию:\n' + bcolors.FAIL +
+			'1 - Ввести номер телефона\n' + bcolors.WARNING +
+			'2 - Сгенерировать случайные данные\n' +
+			'3 - Парсинг прокси\n' +
+			'4 - Перемешать прокси в списке\n' + bcolors.OKCYAN +
+			'd - Очистить файл с прокси\n' + bcolors.FAIL + 
+			'0 - Выход')
 		
 		if not bombshot.is_non_zero_file(os.getcwd() + '/proxy_list.txt'):
 			print(bombshot.warning_output('[ПРЕДУПРЕЖДЕНИЕ]: Файл с прокси пуст, все запросы\nбудут происходить с вашего IP, что потенциально\nможет привести к его блокировке на некоторых сайтах.\nДля парсинга прокси введите ' + bcolors.FAIL + '5'))
@@ -467,44 +587,19 @@ class bombshot:
 		user_option = bombshot.colored_input()
 
 		if user_option == '1':
-			bombshot.clear()
-			# send_sms('79850858982')
-			pass
-		elif user_option == '2':
-			bombshot.clear()
-			bombshot.preinstalled_list()
-			r_option = bombshot.colored_input()
-
-			len_people = bombshot.preinstalled_list()
-
-			if r_option == '0':
-				print(bombshot.warning_output('[ПРЕДУПРЕЖДЕНИЕ]: Выход из программы...'))
-				bombshot.exiting_program()
-
-			elif r_option == '.':
-				bombshot.clear()
-				bombshot.print_full_main_screen()
-
-			elif 1 <= int(r_option) <= len_people:
-				print('Yes')
-
-			else:
-				bombshot.clear()
-				bombshot.exiting_program_error('Опция не найдена.')
-				bombshot.print_full_main_screen()
-
-		elif user_option == '3':
 			bombshot.print_phone_input_screen()
 
-		elif user_option == '4':
+		elif user_option == '2':
 			bombshot.random_name_generator()
 
-		elif user_option == '5':
+		elif user_option == '3':
 			bombshot.print_proxy_screen()
 
+		elif user_option == '4':
+			bombshot.shuffle_proxies()
+
 		elif user_option == 'd':
-			file = open('proxy_list.txt', 'w')
-			bombshot.print_full_main_screen()
+			bombshot.clear_txt_file()
 
 		elif user_option == '0':
 			print(bombshot.exiting_program())
