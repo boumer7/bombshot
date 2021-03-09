@@ -82,6 +82,13 @@ kill число
 Либо вы можете завершить текущую сессию в Termux вверху экрана, нажав на **EXIT**
 ![CKSSZu6WLT4](https://user-images.githubusercontent.com/33152397/109675005-71350180-7b88-11eb-9347-0cdfc4010844.jpg)
 
+# Рекомендации
+
+- Используйте безлимитный интернет. Данное ПО потребляет большое количество интернет-трафика.
+- Используйте прокси для достижения максимального результата.
+- Очищайте кэш после использования при помощи соответствующего софта (например, [CCleaner](https://play.google.com/store/apps/details?id=com.piriform.ccleaner&hl=en&gl=US)).
+- Загрузите как можно больше прокси перед использованием.https://play.google.com/store/apps/details?id=com.piriform.ccleaner&hl=en&gl=US
+
 ## Windows:
 <h3> 1. Для начала работы вам потребуется установить Python и Git: </h3>
 
