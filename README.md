@@ -59,7 +59,7 @@ git clone https://github.com/boumer7/bombshot bs
 ```
 Вас попросят авторизоваться через GitHub: вам нужно ввести свой логин, а потом пароль.
 
-Переместитесь в папку **bombshot** два раза:
+Переместитесь в папку **bs**:
 <br/>
 
 ```console
@@ -75,7 +75,7 @@ cd bs
 ```console
 ls
 ```
-Это команда выведет список всех файлов в текущей директории, среди которых должен быть **bombshot.py** <br/> <br/>
+Это команда выведет список всех файлов в текущей директории, среди которых должен быть **bs.py** <br/> <br/>
 <kbd><image style="border-radius:50%" src="https://user-images.githubusercontent.com/33152397/109676923-359b3700-7b8a-11eb-99d8-dcae6fa4e9c0.jpg"/></kbd><br/> <br/>
 Если вы видите **bs.py**, то вы находитесь в правильной директории.
 
@@ -95,11 +95,11 @@ apt install py3-pip
 <h3> 5. Запуск: </h3>
 
 ```console
-python bombshot.py
+python bs.py
 ```
 Если скрипт не запустился, то попробуйте вызвать его с **python3**:
 ```console
-python3 bombshot.py
+python3 bs.py
 ```
 
 ## Если что-то пошло не так, то вы можете завершить процесс
