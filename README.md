@@ -12,7 +12,7 @@
 
 ### [Рекомендации](#recom) | [Лицензия](https://github.com/boumer7/bombshot/blob/main/LICENSE) | [Положение об использовании ПО](https://github.com/boumer7/bombshot/blob/main/REGULATIONS.md)
 
-<kbd><image style="border-radius:50%" src="https://user-images.githubusercontent.com/33152397/113221271-5e981000-928d-11eb-892c-2295d4f8cf34.png"/></kbd>
+<kbd><image style="border-radius:50%" src="https://user-images.githubusercontent.com/33152397/113222215-2bef1700-928f-11eb-9192-f60e5beb1d88.png"/></kbd>
 <p>Скриншот из консольной версии BOMBSHOT v3.0-beta</p>
 
 ## Дисклеймер / Письменный отказ от ответственности
@@ -55,7 +55,7 @@ apt install python git
 <h3> 3. Далее вам нужно клонировать этот репозиторий: </h3>
 
 ```console
-git clone https://github.com/boumer7/bombshot
+git clone https://github.com/boumer7/bombshot bs
 ```
 Вас попросят авторизоваться через GitHub: вам нужно ввести свой логин, а потом пароль.
 
@@ -63,11 +63,9 @@ git clone https://github.com/boumer7/bombshot
 <br/>
 
 ```console
-cd bombshot
+cd bs
 ```
-```console
-cd bombshot
-```
+
 Вы должны находится примерно в такой директории:<br/> <br/>
 <kbd><image style="border-radius:50%" src="https://user-images.githubusercontent.com/33152397/109676757-13091e00-7b8a-11eb-8dcf-0867d5fbd33b.jpg"/></kbd>
   <br/> <br/>
@@ -79,7 +77,7 @@ ls
 ```
 Это команда выведет список всех файлов в текущей директории, среди которых должен быть **bombshot.py** <br/> <br/>
 <kbd><image style="border-radius:50%" src="https://user-images.githubusercontent.com/33152397/109676923-359b3700-7b8a-11eb-99d8-dcae6fa4e9c0.jpg"/></kbd><br/> <br/>
-Если вы видите **bombshot.py**, то вы находитесь в правильной директории.
+Если вы видите **bs.py**, то вы находитесь в правильной директории.
 
 <h3> 4. Установите соответствующие библиотеки: </h3>
 
@@ -176,17 +174,12 @@ kill -9 число
 Убедившись, что консоль открыта в нужной директории, напишите:
 
 ```console
-git clone https://github.com/boumer7/bombshot
+git clone https://github.com/boumer7/bombshot bs
 ```
 
-Переместитесь в папку bombshot:
+Переместитесь в папку bs:
 ```console 
-cd bombshot
-```
-Теперь переместитесь в подпапку bombshot:
-
-```console 
-cd bombshot
+cd bs
 ```
 
 Если вы не уверены, что находитесь в правильной директории, то напишите:
@@ -195,7 +188,7 @@ cd bombshot
 dir
 ```
 
-Среди файлов должен быть **bombshot.py**, если вы его видите, то вы в верной директории.
+Среди файлов должен быть **bs.py**, если вы его видите, то вы в верной директории.
 <br/>
 <h3> 5. Установка библиотек и запуск </h3>
 
@@ -212,12 +205,12 @@ pip3 install -r requirements.txt
 После установки, вы сможете запустить скрипт:
 
 ```console
-python bombshot.py
+python bs.py
 ```
 Если это не сработало, то попробуйте запустить скрипт с **python3**:
 
 ```console
-python3 bombshot.py
+python3 bs.py
 ```
 
 Поздравляем, теперь вы можете использовать BOMBSHOT.<br/>
@@ -271,19 +264,15 @@ apk add git
 Далее вам нужно клонировать этот репозиторий:
 
 ```console
-git clone https://github.com/boumer7/bombshot
+git clone https://github.com/boumer7/bombshot bs
 ```
 
 Вас попросят авторизоваться через GitHub: вам нужно ввести свой логин, а потом пароль.
 
-Переместитесь в папку **bombshot** два раза:
+Переместитесь в папку **bs**:
 
 ```console
-cd bombshot
-```
-
-```console
-cd bombshot
+cd bs
 ```
 
 Вы должны находится примерно в такой директории:<br/> <br/>
@@ -295,10 +284,10 @@ cd bombshot
 ls
 ```
 
-Это команда выведет список всех файлов в текущей директории, среди которых должен быть **bombshot.py** <br/> <br/>
+Это команда выведет список всех файлов в текущей директории, среди которых должен быть **bs.py** <br/> <br/>
 <kbd><image style="border-radius:50%" src="https://user-images.githubusercontent.com/77790965/110965651-71da4e80-8365-11eb-921a-ceee8d25600b.jpg"/></kbd>
 <br/> <br/>
-Если вы видите **bombshot.py**, то вы находитесь в правильной директории.
+Если вы видите **bs.py**, то вы находитесь в правильной директории.
 
 <h3> 4. Установка библиотек: </h3>
 
@@ -309,7 +298,7 @@ pip3 install -r requirements.txt
 <h3> 5. Запуск: </h3>
 
 ```console
-python3 bombshot.py
+python3 bs.py
 ```
 
 Поздравляем, теперь вы можете использовать BOMBSHOT.<br/>
