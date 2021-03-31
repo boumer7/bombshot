@@ -248,7 +248,7 @@ class bs:
 		os.system('cls' if os.name == 'nt' else 'clear')
 
 	def logo():
-		logo = (bs.red_o('BOMBSHOT v3.0 💣 ') 
+		logo = (bs.red_o('BOMBSHOT v3.0-beta 💣 ') 
 			+ bs.okcyan_o('| BY BOUMER7\n'))
 		print(logo, end='')
 		print(bs.okgreen_o(bsl["GENERAL"]["PENTEST_TOOL"]))
