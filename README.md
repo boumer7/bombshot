@@ -1,4 +1,4 @@
-# BOMBSHOT v3.0 💣
+# BOMBSHOT v3.0-beta 💣
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue?style=flat-square)](https://python.org)
 [![Qiwi](https://img.shields.io/badge/Qiwi-Поддержать-orange?style=flat-square&logo=qiwi&cacheSeconds=3600)](https://qiwi.com/n/BOUMER7)
 
@@ -13,7 +13,7 @@
 ### [Рекомендации](#recom) | [Лицензия](https://github.com/boumer7/bombshot/blob/main/LICENSE) | [Положение об использовании ПО](https://github.com/boumer7/bombshot/blob/main/REGULATIONS.md)
 
 <kbd><image style="border-radius:50%" src="https://user-images.githubusercontent.com/33152397/113221271-5e981000-928d-11eb-892c-2295d4f8cf34.png"/></kbd>
-<p>Скриншот из консольной версии BOMBSHOT v3.0</p>
+<p>Скриншот из консольной версии BOMBSHOT v3.0-beta</p>
 
 ## Дисклеймер / Письменный отказ от ответственности
 
