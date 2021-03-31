@@ -1,4 +1,3 @@
-# taken .gitignore from https://github.com/martinohanlon/flightlight/issues/1
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -57,7 +56,8 @@ docs/_build/
 # PyBuilder
 target/
 
-apis_test.py
 apis_test3.py
 services.txt
 service_snippet.py
+tg/
+.git/

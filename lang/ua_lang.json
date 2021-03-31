@@ -1,0 +1,114 @@
+{
+
+	"GENERAL":{
+
+		"INPUT": "Введення",
+		"EXIT_PRG_WARN": "[ПОПЕРЕДЖЕННЯ]: Вихід із програми...",
+		"ERROR": "[ПОМИЛКА]: ", 
+		"EXITING_PRG": " вихід із програми...",
+		"PENTEST_TOOL": "Інструмент для пентестування.",
+		"UPDATE_VALUES": ", - Оновіть значення",
+		"ZERO_TO_EXIT": "0 - Вихід",
+		"GO_BACK": ". - Повернутися",
+		"SERVICES": "Сервіси:",
+		"CTRL_Z_EXIT": "[Ctrl + Z - Вийти з програми]",
+		"EXITING_OPT_NOT_FOUND": "[ПОПЕРЕДЖЕННЯ]: Опція не знайдена, вихід з програми...",
+		"CHANGE_LANGUAGE": "Change language (type in any case):\nEN - English\nRU - Русский\nUA - Українська",
+		"CHANGED_LANG": "Успішно змінено мову на українську."
+
+	},
+
+	"RND_GEN": {
+
+		"NAME_IN_CYRILLIC": "ПІБ:",
+		"NAME_IN_LATIN": "Ім'я на латиниці:",
+		"E-MAIL": "Пошта:",
+		"PASSWORD": "Пароль:"
+	},
+
+
+	"PROXY": {
+
+		"PROXY_AMNT_INPUT": "Введіть кількість проксі:",
+		"PROXY_TIMEOUT_INPUT": "Введіть затримку проксі (в секундах, від 0.1 до 10):\nЧем вище затримка, тим довше буде пошук.",
+		"PROXY_TIMEOUT_DEFAULT_INPUT": "[Введіть N / n, щоб шукати зі значенням затримки за замовчуванням (0.5 сек.)]",
+		"FOUND": "Знайдено", 
+		"HTTP_PROXIES": "HTTP проксі",
+		"PERFORMANCE_CHECK": "Перевірка на працездатність проксі ...",
+		"CHECKED": "Перевірено",
+		"OUT_OF": "з",
+		"PROXIES_WITH_TIMEOUT": "проксі з затримкою",
+		"SECONDS_3": "cек...",
+		"CHOSEN": "Обрано",
+		"APPENDED": "[Додано",
+		"SECONDS_1": "сек.",
+		"TO_THE_PROXY_LIST": "в proxy_list.txt",
+		"IN": "за",
+		"LOADED_PROXIES": "[У вас є {} проксі в proxy_list.txt]",
+		"SHUFFLE_SUCCESS": "[Успішно перемішано {} проксі в proxy_list.txt]",
+		"EXIT_WARN": "[Не виходьте з програми, якщо ви не хочете втратити вибрані проксі]"
+	},
+
+
+	"SEND_SMS_PROMPT": {
+
+		"PHONE_NUM_INPUT": "Введіть номер телефону (тільки російські номери),\nначіная з 7 або 8:",
+		"SMS_TIMES_INPUT": "Введіть кількість циклів:",
+		"WHETHER_PROXY_INPUT": "Використовувати проксі?\nN1 - Так\n2 - Ні",
+		"SMS_TIME_WARN": "(може знадобитися час, щоб смс почали приходити)",
+		"PROXY_SMS_TIMES_SENT": "[Успішно відправлено {} циклів з {} проксі на телефон {}]",
+		"SMS_TIMES_AND_TO": ": {} циклів на {}",
+		"SMS_TIMES_SENT": "[Успішно відправлено {} циклів на телефон {}]",
+		"SMS_SENDING": "Відправляємо"
+	},
+
+
+	"PROXY_LIST_CLEAR_PROMPT": {
+
+		"PROXY_LIST_CLEAR_WARN": "Ви впевнені що хочете видалити вміст proxy_list.txt?\nЦя дія є незворотнім.",
+		"1_TO_YES": "1 - Так",
+		"2_TO_NO": "2 - Ні"
+	},
+
+	"ERRORS":{
+
+		"PHONE_FORMAT_ERR": "[ПОМИЛКА] Невірний формат номера.",
+		"PROXY_LIST_ALRDY_EMPTY_ERR": "[ПОМИЛКА]: proxy_list.txt вже порожній.",
+		"PROXY_LIST_EMPTY_ERR": "[ПОМИЛКА]: Проксі відсутні в proxy_list.txt.",
+		"PROXY_TIMEOUT_INPUT_ERR":"[ПОМИЛКА]: Невірне значення затримки проксі.",
+		"PROXY_AMNT_INPUT_ERR": "[ПОМИЛКА]: Некоректна кількості проксі.",
+		"LANGUAGE_NOT_FOUND": "[ERROR]: Language not found, switched to English by default."
+
+	},
+
+	"MAIN_MENU": {
+
+		"CHOOSE_OPTION_PROMPT": "Виберіть опцію:\n",
+		"1_TO_PHONE_NUM": "1 - Ввести номер телефону\n",
+		"2_TO_GENERATE_RANDOM_DATA": "2 - Згенерувати випадкові дані\n",
+		"3_TO_PARSE_PROXIES": "3 - Парсинг проксі\n",
+		"4_TO_SHUFFLE_PROXY_LIST": "4 - Перемішати проксі в списку\n",
+		"5_TO_ENTER_SETTINGS": "5 - Settings/Настройки\n",
+		"D_TO_CLEAR_PROXY_LIST": "d - Очистити файл з проксі\n",
+		"0_TO_EXIT": "0 - Вихід",
+		"PROXY_LIST_EMPTY_WARN": "[ПОПЕРЕДЖЕННЯ]: У вас немає проксі в proxy_list.txt,\nпоетому всі запити будуть відбуватися з вашого IP.",
+		"3_TO_PARSE_PROXIES_1": "Для парсинга проксі введіть"
+
+	},
+
+	"SETTINGS": {
+		"MAIN": "Виберіть опцію/Choose an option:\n",
+		"CHANGE_LANGUAGE": "1 - Change language/Змінити мову\n",
+		"CHANGE_REGION": "2 - Оберіть свій регіон номера телефону",
+
+
+		"REGION": {
+			"MAIN": "Виберіть регіон номера телефону:\n",
+			"RU": "RU - Росія\n",
+			"UA": "UA - Україна",
+			"WARN": "Вибачте, на даний момент підтримується тільки Росія."
+
+		}
+
+	}
+}
