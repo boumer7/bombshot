@@ -150,24 +150,24 @@ class bs:
 
 			if cfg_lang == "RU":
 
-				with open('lang/ru_lang.json') as f:
+				with open('lang/ru_lang.json', encoding='utf-8') as f:
 					bsl = json.load(f)
 
 			elif cfg_lang == "UA":
 
-				with open('lang/ua_lang.json') as f:
+				with open('lang/ua_lang.json', encoding='utf-8') as f:
 					bsl = json.load(f)
 
 			else:
 
-				with open('lang/en_lang.json') as f:
+				with open('lang/en_lang.json', encoding='utf-8') as f:
 					bsl = json.load(f)
 
 		else:
 
 			if not default:
 
-				with open(f'lang/{lang_remember}_lang.json') as f:
+				with open(f'lang/{lang_remember}_lang.json', encoding='utf-8') as f:
 					bsl = json.load(f)
 
 				cwd = os.getcwd()
@@ -186,7 +186,7 @@ class bs:
 			else:
 
 				with open(f'lang/en_lang.json') as f:
-					bsl = json.load(f)
+					bsl = json.load(f, encoding='utf-8')
 
 				cwd = os.getcwd()
 				cfg_path = cwd + '/cfg.ini'
@@ -555,7 +555,7 @@ class bs:
 				)
 
 	def count_services():
-		apis_file = open('apis_services.py')
+		apis_file = open('apis_services.py', encoding='utf-8')
 		apis_content = apis_file.read()
 
 		services_count = apis_content.count('requests.post') + apis_content.count('requests.get')
