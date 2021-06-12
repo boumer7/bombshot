@@ -1,6 +1,6 @@
 fake_useragent==0.1.11
 requests==2.22.0
-urllib3==1.25.8
+urllib3>=1.26.5
 proxyscrape==0.3.0
 colorama==0.4.3
 iuliia==0.11.3
